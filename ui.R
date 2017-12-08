@@ -6,7 +6,7 @@ shinyUI(fluidPage(
   
   sidebarLayout(
     sidebarPanel(
-        h3("Slope"),
+        h3("Change in MPG"),
         textOutput("slopeOut"),
         h3("Intercept"),
         textOutput("intOut")
