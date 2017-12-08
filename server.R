@@ -1,4 +1,5 @@
 library(shiny)
+library(caret)
 
 shinyServer(function(input, output) {
    model <- reactive({
@@ -6,7 +7,7 @@ shinyServer(function(input, output) {
        if(nrow(brushed_data)<2){
            return(NULL)
        }
-       lm(mpg~wt, data=brushed_data)
+       lm(mpg~wt, data=trainData)
    })
    output$slopeOut <- renderText({
        if(is.null(model())){
